@@ -3,36 +3,71 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
+    font-family: 'Quicksand', sans-serif !important;
 }
 
-body{
-    background-color: #2b2b2b !important;
+
+#main_container{
+  background: -prefix-linear-gradient(top, #d3d3d3,#d3d3d3 42%, #F4F4F4 50%, #d3d3d3 87%, #d3d3d3);
+  background: linear-gradient(to bottom, #d3d3d3, #d3d3d3 42%, #F8F8F8 50%, #d3d3d3 87%, #d3d3d3);
+  height: 100% !important;
+  min-height: 500px;
 }
 
-.hexagon {
-  position: relative;
-  width: 300px;
-  height: 173.21px;
-  background-color: #64C7CC;
-  margin: 86.60px 0;
+
+.box{
+  width: 250px;
+  height: 250px;
+  display: block;
+  transition: all 0.5s;
 }
 
-.hexagon:before,
-.hexagon:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
+#boxC{
+  width: 60%;
+  display: flex;
 }
 
-.hexagon:before {
-  bottom: 100%;
-  border-bottom: 86.60px solid #64C7CC;
+#boxC:hover .box{
+  transform: translate(-100px, 0);
 }
 
-.hexagon:after {
-  top: 100%;
-  width: 0;
-  border-top: 86.60px solid #64C7CC;
+#boxC:hover .sideboxes .module{
+  transform: translate(-100px, 0);
+  opacity: 1;
+}
+
+#boxC:hover .sideboxes > .module > div > a{
+  opacity: 1;
+}
+
+.sideboxes{
+  width: 6px;
+  height: 250px;
+}
+
+.sideboxes > .module{
+  width: 100%;
+  height: 25%;
+  padding: 5px 0;
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.sideboxes > .module:first-child{
+  opacity: 1;
+}
+
+.sideboxes > .module > div{
+  background: #2b2b2b;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.sideboxes > .module > div > a{
+  opacity: 0;
+  margin-left: 16px;
+  transition: all 0.5s;
+  color: #2B2B2B;
+  font-size: 25px;
 }
