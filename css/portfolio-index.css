@@ -1,0 +1,210 @@
+
+#dark-cover{
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0, 0.5);
+}
+
+.header{
+    width: 100%;
+    height: 70px;
+    background: rgba(0,0,0,0.8);
+    position: absolute;
+    top: 0;
+    z-index: 5;
+}
+
+.moduleWrapper{
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/meat_starto/background.png");
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+}
+
+#gradient-bottom {
+    content: '';
+    width: 100%;
+    height: 350px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient( rgba(0,0,0,0), rgba(0,0,0,1));
+    z-index: 3;
+}
+
+
+.carousel-height-inner > div{
+    height: 100%;
+}
+
+.base{
+    width: 1999px;
+    height: 1190px;
+    background-image: url("../assets/meat_starto/base.png");
+    background-size: cover;
+    background-position: center top;
+    align-self: flex-end;
+}
+
+.relative-wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.description{
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    width: 380px;
+    height: 350px;
+    padding: 20px;
+}
+
+
+.description-shape{
+    position: absolute;
+    z-index: 3;
+    top:0;
+    left:0;
+}
+
+.description-text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    text-align: center;
+    padding: 60px 10px 10px 35px;
+}
+
+.description-text > p:first-child{
+    color: #f56042;
+    text-shadow: 2px 2px 3px #2b2b2b;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.description-text > p:nth-child(2){
+    color: #f4f4f4;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.carousel-control-prev{
+    font-size: 50px;
+    color: orange !important;
+}
+.carousel-control-next{
+    font-size: 50px;
+    color: orange !important;
+}
+
+.gamePreview{
+    width: 260px;
+    height: 150px;
+    background: #2b2b2b;
+    border: 3px solid #2b2b2b;
+    margin-bottom: 15px;
+}
+
+.GameModule.active .gamePreview{
+    border: 3px solid orange;
+}
+
+.gamePreview img{
+    width: 100%;
+}
+
+.GameModule{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 30px;
+    cursor: pointer;
+}
+
+.GameModule.active{
+    color: orange;
+}
+
+
+.pentagon-wrapper{
+    transform: perspective(999px) rotateZ(30deg);
+    padding-top: 100px;
+}
+
+
+
+.pentagon {
+    position: relative;
+    box-sizing: content-box;
+    border-style: solid;
+    display: inline-block;
+    border-color: rgba(0,0,0, 0.7) transparent;
+    width: 216px;
+    border-width: 200px 72px 0;
+}
+
+.pentagon:before {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-style: solid;
+    border-color: transparent transparent rgba(0,0,0, 0.7);
+    top: -340px;
+    left: -72px;
+    border-width: 0 180px 140px;
+}
+
+.pentagon-orange{
+    border-color: rgba(245, 96, 66, 0.7) transparent;
+}
+.pentagon-orange:before{
+    border-color: transparent transparent rgba(245, 96, 66, 0.7);
+}
+
+
+
+
+@media (min-width: 2000px) and (min-height: 870px){
+    .pentagon {
+        width: 270px;
+        border-width: 250px 90px 0;
+    }
+    .pentagon:before {
+        top: -425px;
+        left: -90px;
+        border-width: 0 225px 175px;
+    }
+
+    .description{
+        width: 450px;
+        height: 450px;
+    }
+
+    .description-text{
+        padding: 55px 10px 10px 60px;
+    }
+    
+    .description-text > p:first-child{
+        font-size: 43px;
+    }
+    
+    .description-text > p:nth-child(2){
+        font-size: 17px;
+    }
+
+
+
+
+}
