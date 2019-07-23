@@ -79,6 +79,17 @@
 }
 
 
+@media (max-height: 568px){
+    .title{
+        font-size: 60px;
+    }
+    
+    .title-description{
+        font-size: 18px;
+        width: 220px;
+    }
+}
+
 @media (min-width: 768px){
     .hexagon-img{
         top: initial;

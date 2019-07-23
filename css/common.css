@@ -20,7 +20,7 @@ div{
   background-size: cover;
   background-position: center center;
   height: 100% !important;
-  min-height: 568px;
+  min-height: 498px;
 }
 
 
@@ -53,7 +53,7 @@ div{
     bottom: 0;
     
     width: 100%;
-    height: 78px;
+    height: 62px;
     background: rgba(255, 255, 255, 0.07);
 
     z-index: 10;
@@ -61,7 +61,7 @@ div{
 
 .sidebar .logo {
     text-align: center;
-    width: 60px;
+    width: 55px;
     height: 100%;
     margin-top: -30px;
     margin-left: 13px;
@@ -77,8 +77,8 @@ div{
     height: 100%;
     display: flex;
     justify-content: space-between;
-    padding-left: 8%;
-    padding-right: 8%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .navegation a{
@@ -86,7 +86,7 @@ div{
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    font-size: 27px;
+    font-size: 23px;
     color: rgb(190, 190, 190);
     transition: color 0.2s ease-in-out;
     line-height: 3;
@@ -99,7 +99,7 @@ div{
 }
 
 .navegation span{
-    font-size: 10px;
+    font-size: 9px;
 }
 
 
@@ -158,6 +158,48 @@ div{
 .social .twitter:hover, .social .github:hover, .social .linkedin:hover{
     opacity: 0.9;
     transform: scale(1.05);
+}
+
+@media (max-height: 578px){
+    .title{
+        font-size: 60px;
+    }
+    
+    .title-description{
+        font-size: 18px;
+        width: 220px;
+    }
+
+    .social > div{
+        top: -20px;
+        left: 7px;
+        transform: scale(0.9);
+    }
+}
+
+
+@media (min-width: 350px){
+    .sidebar{
+        height: 78px;
+    }
+
+    .navegation{
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .navegation a{
+        font-size: 27px;
+    }
+
+    .navegation span{
+        font-size: 10px;
+    }
+    
+    .sidebar .logo {
+        width: 60px;
+    }
+    
 }
 
 
