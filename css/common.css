@@ -10,18 +10,20 @@ img{
   vertical-align: initial !important;
 }
 
+div{
+    transition:  max-width 0.2s ease-in-out, font-size 0.2s ease-in-out;
+}
+
 
 #main_container{
   background: url("../assets/images/Background.jpg");
   background-size: cover;
   background-position: center center;
   height: 100% !important;
-  min-height: 300px;
+  min-height: 568px;
 }
 
-.h-100{
-    height: 100% !important;
-}
+
 
 .button{
     text-decoration: none;
@@ -43,50 +45,179 @@ img{
     color: #2B2B2B;
 }
 
-.logo-wrapper{
+
+
+.sidebar{
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100px;
-    height: 100px;
+    top: initial;
+    bottom: 0;
+    
+    width: 100%;
+    height: 78px;
+    background: rgba(255, 255, 255, 0.07);
+
+    z-index: 10;
 }
 
-.logo-wrapper a{
-    display: block; 
-    position: absolute;
-    margin-left: 50px;
-    margin-top: 50px;
+.sidebar .logo {
+    text-align: center;
+    width: 60px;
+    height: 100%;
+    margin-top: -30px;
+    margin-left: 13px;
 }
 
 .logo img{
-    height: 100%;
+    width: 100%;
 }
 
-.logo-bg{
-    opacity: 0.1;
-    width: 250px;
-    height: 450px;
+
+.navegation{
+    width: calc(100% - 77px);
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.navegation a{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 27px;
+    color: rgb(190, 190, 190);
+    transition: color 0.2s ease-in-out;
+    line-height: 3;
+    padding-top: 10px;
+}
+
+.navegation a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.navegation span{
+    font-size: 10px;
+}
+
+
+/* SOCIAL */
+.social{
+    width: 100%;
+    height: 150px;
+    padding-left: 5px;
+    position: initial;
+}
+
+.social > div{
+    position: fixed;
+    top: 15px;
+    left: 15px;
+}
+
+.social > div > a {
+    display: block;
+    width: 44px;
+    height: 50px;
+}
+
+.social .github{
     position: absolute;
+    top: 0;
+    left: 11px;
+    background: url("../assets/images/github.png");
+    background-size: cover;
+    background-position: center;
 }
 
-.logo-bg > div:first-child {
-    width: 100%;
-    height: 100%;
-    background: white;
-    transform: rotateZ(45deg);
-    transform-origin: 110% 10%;
+.social .linkedin{
+    position: absolute;
+    top: 42px;
+    left: 36px;
+    background: url("../assets/images/linkedin.png");
+    background-size: cover;
+    background-position: center;
 }
 
-.h-100{
-    height: 100%;
+.social .twitter{
+    position: absolute;
+    top: 85px;
+    left: 12px;
+    background: url("../assets/images/twitter.png");
+    background-size: cover;
+    background-position: center;
 }
 
-.w-100{
-    width: 100%;
+.social .twitter, .social .github, .social .linkedin{
+    opacity: 0.75;
+    transition: all 0.2s ease-in-out;
 }
 
+.social .twitter:hover, .social .github:hover, .social .linkedin:hover{
+    opacity: 0.9;
+    transform: scale(1.05);
+}
 
 
 @media (min-width: 768px){
 
+    #main_container{
+        min-height: 630px;
+    }
+
+    .sidebar{
+        width: 100px;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .sidebar .logo{
+        margin-top: 45px;
+        margin-left: 0;
+        width: 100%;
+        height: 75px;
+    }
+
+    .logo img{
+        width: auto;
+        height: 100%;
+    }
+
+    .navegation{
+        width: 100%;
+        height: 228px;
+        flex-direction: column;
+        visibility: hidden;
+    }
+
+    .navegation a{
+        font-size: 35x;
+    }
+
+    .social{
+        position: initial;
+    }
+
+    .social > div{
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+@media (min-width: 992px){
+    #main_container{
+        min-height: 643px;
+      }
+    .sidebar .logo {
+        height: 100px;
+    }
+    .navegation{
+        width: 100%;
+        height: 296px;
+    }
 }

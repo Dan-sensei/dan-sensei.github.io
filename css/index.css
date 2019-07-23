@@ -1,11 +1,11 @@
 
 .title{
-    font-size: 120px;
+    font-size: 80px;
 }
 
 .title-description{
-    font-size: 27px;
-    width: 360px;
+    font-size: 20px;
+    width: 250px;
 }
 
 .separator{
@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    font-size: 42px;
+    font-size: 30px;
     font-weight: 300;
 }
 
@@ -35,17 +35,18 @@
 
 .selected{
     display: inline-block;
-    width: 75px;
-    height: 75px;
+    width: 30px;
+    height: 30px;
     background: url("../assets/images/menu-selector.png");
-    background-size: 80% 80%;
+    background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .menu a:hover .selected{
-    visibility: visible;
+    opacity: 1;
 }
 
 @keyframes HEXCALE{
@@ -61,9 +62,10 @@
 
 .hexagon-img{
     position: absolute;
-    right: -17%;
-    width: 35%;
-    padding-top: 35%;
+    top: -5%;
+    right: -13%;
+    width: 50%;
+    padding-top: 50%;
     background: url("../assets/images/hexagon.png");
     background-size: cover;
 }
@@ -76,56 +78,38 @@
     animation: HEXCALE 3s linear 1.5s infinite;
 }
 
-.social{
-    position: absolute;
-    bottom: 30px;
-    left: 50px;
-    width: 230px;
-    height: 171px;
-}
-
-
-.social > div > a {
-    display: block;
-    width: 82px;
-    height: 94px;
-}
-
-.social .github{
-    position: absolute;
-    top: 0;
-    background: url("../assets/images/github.png");
-    background-size: cover;
-    background-position: center;
-}
-
-.social .linkedin{
-    position: absolute;
-    bottom: 0;
-    left: 45px;
-    background: url("../assets/images/linkedin.png");
-    background-size: cover;
-    background-position: center;
-}
-
-.social .twitter{
-    position: absolute;
-    bottom: 0;
-    left: 135px;
-    background: url("../assets/images/twitter.png");
-    background-size: cover;
-    background-position: center;
-}
-
-.social .twitter, .social .github, .social .linkedin{
-    transition: all 0.2s ease-in-out;
-}
-
-.social .twitter:hover, .social .github:hover, .social .linkedin:hover{
-    transform: scale(1.1);
-}
 
 @media (min-width: 768px){
+    .hexagon-img{
+        top: initial;
+        right: -17%;
+        width: 35%;
+        padding-top: 35%;
+    }
+}
+
+
+@media (min-width: 992px){
+    .title{
+        font-size: 120px;
+    }
+    
+    .title-description{
+        font-size: 27px;
+        width: 360px;
+    }
+
+    
+
+    .menu{
+        font-size: 42px;
+        font-weight: 300;
+    }
+
+    .selected{
+        width: 40px;
+        height: 40px;
+    }
 
 }
 
