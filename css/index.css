@@ -1,94 +1,131 @@
-/* INDEX CSS */
 
-.box{
-  width: 175px;
-  height: 175px;
-  display: inline-block;
-  transition: all 0.5s;
-  background: #2B2B2B;
-  color: #F4F4F4;
-  background-image: url("../assets/images/hi_im_danny.jpg");
-  background-size: contain;
+.title{
+    font-size: 120px;
+}
+
+.title-description{
+    font-size: 27px;
+    width: 360px;
+}
+
+.separator{
+    border-right: 6px solid #1a84c1;
+    height: 100%;
+}
+
+.menu{
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    font-size: 42px;
+    font-weight: 300;
+}
+
+.menu a{
+    text-decoration: none;
+    color: #F4F4F4;
+}
+
+.menu a:hover{
+    text-decoration: none;
+    color: #C9C9C9;
 }
 
 
-.sideboxes{
-  margin-top: 40px;
-  text-align: center;
+.selected{
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    background: url("../assets/images/menu-selector.png");
+    background-size: 80% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    visibility: hidden;
 }
 
-.sideboxes > .module{
-  margin: 10px 0;
+.menu a:hover .selected{
+    visibility: visible;
 }
 
-.sideboxes > .module > div{
-  display: none;
+@keyframes HEXCALE{
+    from{ 
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    to{ 
+        transform: scale(1.5);
+        opacity: 0;
+    }
 }
 
-.sideboxes > .module > a{
-  color: #2B2B2B;
-  font-size: 25px;
+.hexagon-img{
+    position: absolute;
+    right: -17%;
+    width: 35%;
+    padding-top: 35%;
+    background: url("../assets/images/hexagon.png");
+    background-size: cover;
+}
+
+.hexcale-1{
+    animation: HEXCALE 3s linear 0s infinite;
+}
+
+.hexcale-2{
+    animation: HEXCALE 3s linear 1.5s infinite;
+}
+
+.social{
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    width: 230px;
+    height: 171px;
 }
 
 
+.social > div > a {
+    display: block;
+    width: 82px;
+    height: 94px;
+}
 
+.social .github{
+    position: absolute;
+    top: 0;
+    background: url("../assets/images/github.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.social .linkedin{
+    position: absolute;
+    bottom: 0;
+    left: 45px;
+    background: url("../assets/images/linkedin.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.social .twitter{
+    position: absolute;
+    bottom: 0;
+    left: 135px;
+    background: url("../assets/images/twitter.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.social .twitter, .social .github, .social .linkedin{
+    transition: all 0.2s ease-in-out;
+}
+
+.social .twitter:hover, .social .github:hover, .social .linkedin:hover{
+    transform: scale(1.1);
+}
 
 @media (min-width: 768px){
 
-  .box{
-    width: 250px;
-    height: 250px;
-  }
-
-  #boxC{
-    margin-left: 7vw;
-  }
-
-  #boxC:hover .box{
-    transform: translate(-100px, 0);
-  }
-
-  #boxC:hover .sideboxes .module{
-    transform: translate(-100px, 0);
-    opacity: 1;
-  }
-  
-  #boxC:hover .sideboxes > .module > a{
-    opacity: 1;
-  }
-
-  .sideboxes{
-    height: 250px;
-    display: inline-block;
-    margin-top: 0;
-  }
-  
-  .sideboxes > .module{
-    height: 25%;
-    padding: 5px 0;
-    transition: all 0.5s;
-    opacity: 0;
-    display: flex;
-    align-items: center;
-    margin: 0;
-  }
-  
-  .sideboxes > .module:first-child{
-    opacity: 1;
-  }
-  
-  .sideboxes > .module > div{
-    background: #2b2b2b;
-    height: 100%;
-    width: 5px;
-    display: inline-block;
-  }
-  
-  .sideboxes > .module > a{
-    opacity: 0;
-    margin-left: 13px;
-    transition: all 0.5s;
-    display: inline-block;
-  }
 }
 
