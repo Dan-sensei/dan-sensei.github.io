@@ -49,34 +49,7 @@
     opacity: 1;
 }
 
-@keyframes HEXCALE{
-    from{ 
-        transform: scale(1);
-        opacity: 0.6;
-    }
-    to{ 
-        transform: scale(1.5);
-        opacity: 0;
-    }
-}
 
-.hexagon-img{
-    position: absolute;
-    top: -5%;
-    right: -13%;
-    width: 50%;
-    padding-top: 50%;
-    background: url("../assets/images/hexagon.png");
-    background-size: cover;
-}
-
-.hexcale-1{
-    animation: HEXCALE 3s linear 0s infinite;
-}
-
-.hexcale-2{
-    animation: HEXCALE 3s linear 1.5s infinite;
-}
 
 
 @media (max-height: 568px){
@@ -91,12 +64,7 @@
 }
 
 @media (min-width: 768px){
-    .hexagon-img{
-        top: initial;
-        right: -17%;
-        width: 35%;
-        padding-top: 35%;
-    }
+    
 }
 
 

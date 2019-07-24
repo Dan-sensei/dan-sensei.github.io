@@ -19,11 +19,10 @@ div{
   background: url("../assets/images/Background.jpg");
   background-size: cover;
   background-position: center center;
-  height: 100% !important;
-  min-height: 498px;
+  background-attachment: fixed;
+  min-height: 100% !important;
+  min-height: 444px;
 }
-
-
 
 .button{
     text-decoration: none;
@@ -46,15 +45,14 @@ div{
 }
 
 
-
 .sidebar{
-    position: absolute;
+    position: fixed;
     top: initial;
     bottom: 0;
     
     width: 100%;
     height: 62px;
-    background: rgba(255, 255, 255, 0.07);
+    background: #252525;
 
     z-index: 10;
 }
@@ -102,6 +100,11 @@ div{
     font-size: 9px;
 }
 
+.center-items-xy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* SOCIAL */
 .social{
@@ -160,6 +163,54 @@ div{
     transform: scale(1.05);
 }
 
+
+.hexagon-img{
+    position: absolute;
+    top: -5%;
+    right: -13%;
+    width: 50%;
+    padding-top: 50%;
+    background: url("../assets/images/hexagon.png");
+    background-size: cover;
+}
+
+.text-blue { 
+    color: #1a84c1;
+}
+
+.text-light-blue{
+    color: #b5e4ff;
+}
+
+hr{
+    border-top: 1px solid #1a84c1 !important;
+}
+
+hr.mini{
+    border-top: 1px solid #F4F4F4 !important;
+    max-width: 200px;
+}
+
+@keyframes HEXCALE{
+    from{ 
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    to{ 
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.hexcale-1{
+    animation: HEXCALE 3s linear 0s infinite;
+}
+
+.hexcale-2{
+    animation: HEXCALE 3s linear 1.5s infinite;
+}
+
+
 @media (max-height: 578px){
     .title{
         font-size: 60px;
@@ -207,9 +258,11 @@ div{
 
     #main_container{
         min-height: 630px;
+        padding-left: 100px;
     }
 
     .sidebar{
+        background: rgba(255, 255, 255, 0.07);
         width: 100px;
         height: 100%;
         top: 0;
@@ -247,6 +300,13 @@ div{
         position: relative;
         top: 0;
         left: 0;
+    }
+
+    .hexagon-img{
+        top: initial;
+        right: -17%;
+        width: 35%;
+        padding-top: 35%;
     }
 }
 
