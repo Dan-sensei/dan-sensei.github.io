@@ -45,8 +45,12 @@
 .profile-pic-outer{
     border: 4px solid #1a84c1;
     width: 55%;
-    padding-top: 55%;
     transition: all 0.5s ease-in-out;
+}
+
+.profile-pic-outer::before{
+    content: "";
+    padding-top: 100%;
 }
 
 .profile-pic-inner{  
@@ -64,7 +68,7 @@
     right: -20%;
     bottom: -20%;
     left: -20%;
-    background-image: url("../assets/images/Me.jpg");
+    background-color: #2B2B2B;
     background-position: 0% 0%;
     background-size: 100% auto;
 }
@@ -220,7 +224,6 @@
 @media (min-width: 576px){
     .profile-pic-outer{
         width: 40%;
-        padding-top: 40%;
     }
     
 }
@@ -236,26 +239,25 @@
     }
     .profile-pic-outer{
         width: 35%;
-        padding-top: 35%;
     }
-
+    
     #terminal{
         font-size: 13px;
     }
-
+    
     .progress-bar-full{
         height: 24px;
     }
-
+    
     .software-module > img {
         width: auto;
         height: auto;
     }
-
+    
     .software-name {
         font-size: 35px;
     }
-
+    
     .software-name + div {
         font-size: 20px;
     }
@@ -270,19 +272,16 @@
 @media (min-width: 1200px){
     .profile-pic-outer{
         width: 65%;
-        padding-top: 65%;
     }
-    .profile-pic-wrapper{
-        height: 300px;
-    }
+    
     .title{
         font-size: 50px;
     }
-
+    
     .border-center{
         margin-top: 37px;
     }
-
+    
     #terminal{
         font-size: 16px;
     }
@@ -292,6 +291,5 @@
 @media (min-width: 1500px){
     .profile-pic-outer{
         width: 50%;
-        padding-top: 50%;
     }
 }

@@ -16,7 +16,8 @@ div{
 
 
 #main_container{
-  background: url("../assets/images/Background.jpg");
+  /* background: url("../assets/images/Background.jpg"); */
+  background-color: #171717;
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -162,7 +163,13 @@ div{
     opacity: 0.9;
     transform: scale(1.05);
 }
-
+.top-left-hex{
+    position: relative;
+}
+.hex-wrapper{
+    width: 0;
+    height: 0;
+}
 
 .hexagon-img{
     position: absolute;
