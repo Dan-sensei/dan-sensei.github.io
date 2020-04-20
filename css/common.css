@@ -17,17 +17,38 @@ div{
 
 #main_container{
   /* background: url("../assets/images/Background.jpg"); */
-  background-color: #171717;
   background-position: center center;
   background-attachment: fixed;
   min-height: 100% !important;
   min-height: 444px;
 }
 
-.bg-negative-grid {
+body.text-light #main_container {
+	background-color: #171717;
+}
+
+body.text-dark #main_container {
+	background-color: #f7f7f7;
+}
+
+body.text-light .bg-negative-grid {
     background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
     background-size: 8px 8px;
+}
+
+body.text-dark .bg-negative-grid {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-size: 8px 8px;
+}
+
+body.text-light #lights {
+	color: #2e2e2e;
+}
+
+body.text-dark #lights {
+	color: #f4f4f4;
 }
 
 .button{
@@ -178,13 +199,34 @@ div{
 
 .hexagon-img{
     position: absolute;
-    top: -5%;
-    right: -13%;
-    width: 50%;
-    padding-top: 50%;
     background: url("../assets/images/hexagon.png");
     background-size: cover;
+	width: 80px;
+	height: 80px;
+	top: 40px;
+	right: 40px;
 }
+
+body.text-light .hexagon-img {
+	position: absolute;
+    background: url("../assets/images/hexagon.png");
+    background-size: cover;
+	width: 80px;
+	height: 80px;
+	top: 40px;
+	right: 40px;
+}
+
+body.text-dark .hexagon-img {
+	position: absolute;
+    background: url("../assets/images/d-hexagon.png");
+    background-size: cover;
+	width: 80px;
+	height: 80px;
+	top: 40px;
+	right: 40px;
+}
+
 
 .text-blue { 
     color: #1a84c1;
@@ -206,20 +248,20 @@ hr.mini{
 @keyframes HEXCALE{
     from{ 
         transform: scale(1);
-        opacity: 0.6;
+        opacity: 0.2;
     }
     to{ 
-        transform: scale(1.5);
+        transform: scale(2);
         opacity: 0;
     }
 }
 
 .hexcale-1{
-    animation: HEXCALE 3s linear 0s infinite;
+    animation: HEXCALE 2s linear 0s infinite;
 }
 
 .hexcale-2{
-    animation: HEXCALE 3s linear 1.5s infinite;
+    animation: HEXCALE 2s linear 1s infinite;
 }
 
 
@@ -311,13 +353,6 @@ hr.mini{
         position: relative;
         top: 0;
         left: 0;
-    }
-
-    .hexagon-img{
-        top: initial;
-        right: -17%;
-        width: 35%;
-        padding-top: 35%;
     }
 }
 

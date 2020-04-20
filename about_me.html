@@ -12,12 +12,12 @@
         <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/ba296b5cb9.js"></script>
     </head>
-    <body>
+    <body class="text-light">
         <div class="bg-warning text-dark text-center font-weight-bold position-absolute w-100" style="z-index: 10;"><i class="fas fa-exclamation-triangle"></i> UNDER DEVELOPMENT <i class="fas fa-exclamation-triangle"></i></div>
         
         <div id="main_container" class="d-flex position-relative bg-negative-grid">
             
-            <div class="container pt-5 text-light text-justify">
+            <div class="container pt-5 text-justify">
                 <div class="row">
                     <div class="d-none d-sm-block col-0 col-sm-3 col-lg-4">
                         <div class="border-center"></div>
@@ -129,7 +129,7 @@
                     </div>
                     
                     <div id="cabecera" class="text-center bg-light mx-auto mt-4 text-dark">TERMINAL</div>
-                    <div id="terminal" class="container bg-terminal mt-0 text-left"> 
+                    <div id="terminal" class="container bg-terminal mt-0 text-left text-light"> 
                         <div class="row">
                             <div class="col-12 pt-2">
                                     <span class="text-blue">[dansensei@dan-sensei</span> <span class ="text-light-blue">about_me</span><span class="text-blue">]$</span> ./programming_skills<br/>
@@ -321,13 +321,47 @@
             
             
         </div>
-        <div class="hex-wrapper">
-            <div class="hexagon-img"></div>
-            <div class="hexagon-img hexcale-1"></div>
-            <div class="hexagon-img hexcale-2"></div>
-        </div>
-
+		
+		<a id="lights" style="z-index: 2; font-size: 20px;" class="hexagon-img d-flex align-items-center justify-content-center text-decoration-none" href="#">
+			<i class="fas fa-lightbulb"></i>
+		</a>
+		<div class="hexagon-img hexcale-1"></div>
+		<div class="hexagon-img hexcale-2"></div>
+    
+		
+        <script src="javascript/jquery-3.4.1.min.js"></script>
         <script src="javascript/bootstrap.min.js"></script>
         <script src="javascript/webgl.js"></script>
+		<script>
+			function checkTheme() {
+				let theme = localStorage.getItem('theme');
+				if(theme === 'light') {
+					$("body").removeClass("text-light");
+					$("body").addClass("text-dark");
+				}
+				else {
+					$("body").removeClass("text-dark");
+					$("body").addClass("text-light");
+					localStorage.setItem('theme', 'dark');
+				}
+			}
+			
+			function switchTheme(){
+				let theme = localStorage.getItem('theme');
+				if(theme === 'light') {
+					localStorage.setItem('theme', 'dark');
+				}
+				else {
+					localStorage.setItem('theme', 'light');
+				}
+				checkTheme();
+			}
+			
+			$(function(){
+				checkTheme();
+				$("#lights").click(switchTheme);
+				
+			});
+		</script>
     </body>
 </html>
