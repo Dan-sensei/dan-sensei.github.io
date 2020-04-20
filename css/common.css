@@ -18,11 +18,16 @@ div{
 #main_container{
   /* background: url("../assets/images/Background.jpg"); */
   background-color: #171717;
-  background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   min-height: 100% !important;
   min-height: 444px;
+}
+
+.bg-negative-grid {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 8px 8px;
 }
 
 .button{
@@ -265,7 +270,6 @@ hr.mini{
 
     #main_container{
         min-height: 630px;
-        padding-left: 100px;
     }
 
     .sidebar{
