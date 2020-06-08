@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="Cache-Control"
+            content="no-cache, no-store, must-revalidate"
+        />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <title>Pesé</title>
+        <link
+            href="https://fonts.googleapis.com/css?family=Josefin+Sans"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/datatables.min.css" />
+		<link rel="stylesheet" href="css/viewer.css">
+		<link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <div>
+                <div class="text">SPACE SKYBOUND ORATORIO</div>
+            </div>
+
+            <div class="part"></div>
+		</header>
+	
+
+        <div class="container-fluid text-light">
+            <div class="row">
+                <div class="col-12">
+                    <table id="nambawan" class="display text-dark w-100">
+                        <thead>
+                            <tr>
+                                <th class="pl-1">Username</th>
+                                <th>UID</th>
+                                <th>Server</th>
+                                <th>Faccion</th>
+                                <th class="pl-3">Puntos</th>
+                                <th class="pr-1">Imagen</th>
+                            </tr>
+                        </thead>
+					</table>
+					<tbody class="text-dark"></tbody>
+                </div>
+            </div>
+		</div>
+
+		
+		<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+
+        <script src="js/jquery-3.5.1.min.js"></script>
+        <script src="js/datatables.min.js"></script>
+        <script src="js/viewer.min.js"></script>
+        <script src="js/jquery-viewer.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
