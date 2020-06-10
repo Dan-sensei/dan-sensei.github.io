@@ -70,7 +70,7 @@ function initDatatbleFromServer() {
 			"search": { regex: true },
 			"initComplete": function(settings, json) {
 				var $image = $('#image');
-				// View a list of images
+
 				$('#nambawan td:last-child').viewer({
 					inline: false,
 					viewed: function() {
@@ -164,8 +164,7 @@ function initDatatableFromLocal() {
 
 }
 
-function FilterByFaction(factions){
-	console.log(factions);
+function FilterByFaction(factions) {
 	table
 		.column( 1 )
 		.search(factions, true, false)
