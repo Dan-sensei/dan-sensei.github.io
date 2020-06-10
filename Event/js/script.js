@@ -72,7 +72,7 @@ function initDatatbleFromServer() {
 		table = $('#nambawan').DataTable( {
 			"data": Output,
 			"search": { regex: true },
-			"initComplete": function(settings, json) {
+			"drawCallback": function( settings ) {
 				var $image = $('#image');
 
 				$('#nambawan td:last-child').viewer({
@@ -83,13 +83,12 @@ function initDatatbleFromServer() {
 					navbar: 0,
 					toolbar: 0,
 				});
-				
 			},
 			"language":
 			{
 				"sProcessing":     "Procesando...",
 				"sLengthMenu":     "Mostrar _MENU_ shikikans",
-				"sZeroRecords":    "No se encontraron resultados",
+				"sZeroRecords":    "Ningún shikikan a la vista",
 				"sEmptyTable":     "Ningún shikikan a la vista",
 				"sInfo":           "Mostrando shikikans del _START_ al _END_ de un total de _TOTAL_ shikikans",
 				"sInfoEmpty":      "Mostrando shikikans del 0 al 0 de un total de 0 shikikans",
@@ -174,19 +173,6 @@ function FilterByFaction(factions) {
 		.search(factions, true, false)
 		.draw();
 }
-
-function del(){
-	firebase.database().ref('130108062341005312').once('value').then(function(data) {
-		console.log(data.val());
-	});
-	firebase.database().ref('130108062341005312').remove().then(function() {
-		console.log("Borrao");
-	});
-	firebase.database().ref('130108062341005312').once('value').then(function(data) {
-		console.log(data.val());
-	});
-}
-
 
 function init() {
     for(let i = 0; i < 20; ++i){
