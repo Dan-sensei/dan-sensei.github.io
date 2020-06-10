@@ -32,7 +32,6 @@ $( document ).ready(function() {
 		if(this.id === 'sandy_c' && $("#sandy_c").prop("checked"))
 			hallo.play();
 			
-
 		let factions = "ff";
 		if($("#amagi_c").prop("checked")) factions += "|amagi";
 		if($("#avrora_c").prop("checked")) factions += "|avrora";
@@ -43,8 +42,7 @@ $( document ).ready(function() {
         FilterByFaction(factions);
 	});
 	
-	initDatatableFromLocal();
-	
+	initDatatbleFromServer();
 });
 
 function initDatatbleFromServer() {
