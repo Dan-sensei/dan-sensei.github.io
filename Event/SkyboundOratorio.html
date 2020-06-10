@@ -8,7 +8,7 @@
         />
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
-        <title>Pesé</title>
+        <title>Space Skybound Oratorio</title>
         <link
             href="https://fonts.googleapis.com/css?family=Josefin+Sans"
             rel="stylesheet"
@@ -18,36 +18,126 @@
 		<link rel="stylesheet" href="css/viewer.css">
 		<link rel="stylesheet" href="css/style.css">
     </head>
-    <body>
+    <body class="bg-darker bg-negative-grid">
         <header>
-            <div>
+            <div class="position-relative">
                 <div class="text">SPACE SKYBOUND ORATORIO</div>
+                <div class=" text text-bg">SPACE SKYBOUND ORATORIO</div>
             </div>
-
+			<audio id="HALLO">
+				<source src="sounds/HALLO!.mp3" type="audio/mp3">
+			</audio>
             <div class="part"></div>
 		</header>
-	
+		
 
-        <div class="container-fluid text-light">
-            <div class="row">
+        <div class="container text-light px-0">
+			<div id="servers" class="w-100 mt-3 mb-5" >
+				<label for="amagi_c" class="o-70 ml-0 d-flex align-items-center justify-content-end pr-5">
+					<input id="amagi_c" type="checkbox" checked>
+					<div class="bg-server-tag"></div>
+					<div id="AMAGI" class="server-icon"></div>
+					<div class="name">Amagi</div>
+				</label>
+				<label for="avrora_c" class="o-70 d-flex align-items-center justify-content-end pr-5">
+					<input id="avrora_c" type="checkbox" checked>
+					<div class="bg-server-tag"></div>
+					<div id="AVRORA" class="server-icon"></div>
+					<div class="name">Avrora</div>
+				</label>
+				<label for="lexington_c" class="o-70 d-flex align-items-center justify-content-end pr-5">
+					<input type="checkbox" id="lexington_c" checked>
+					<div class="bg-server-tag"></div>
+					<div id="LEXINGTON" class="server-icon"></div>
+					<div class="name">Lexington</div>
+				</label>
+				<label for="sandy_c" class="o-70 d-flex align-items-center justify-content-end pr-5">
+					<input type="checkbox" id="sandy_c" checked>
+					<div class="bg-server-tag"></div>
+					<div id="SANDY" class="server-icon"></div>
+					<div class="name">Sandy</div>
+				</label>
+				<label for="washington_c" class="o-70 mr-0 d-flex align-items-center justify-content-end pr-5">
+					<input type="checkbox" id="washington_c" checked>
+					<div class="bg-server-tag"></div>
+					<div id="WASHINGTON" class="server-icon"></div>
+					<div class="name">Washington</div>
+				</label>
+			</div>
+            <div class="row mr-0">
                 <div class="col-12">
                     <table id="nambawan" class="display text-dark w-100">
                         <thead>
                             <tr>
-                                <th class="pl-1">Username</th>
-                                <th>UID</th>
+                                <th>Username</th>
                                 <th>Server</th>
                                 <th>Faccion</th>
-                                <th class="pl-3">Puntos</th>
-                                <th class="pr-1">Imagen</th>
+                                <th>Puntos</th>
+                                <th>Imagen</th>
                             </tr>
                         </thead>
+						<tbody class="text-light">
+							<tr>
+								<td>Dan</td>
+								<td><img class="faction" src="https://cdn.discordapp.com/attachments/456503841060421634/715072252928065616/Sakura_Empire.png"></td>
+								<td>sandy</td>
+								<td>3</td>
+								<td><img class='init_image' src='https://cdn.discordapp.com/attachments/714160573285138444/719616368579969024/Cubo_azur_lane.png' alt ='Image_Starto'/></td>
+							</tr>
+							
+							<tr>
+								<td>Dan</td>
+								<td><img class="faction" src="https://cdn.discordapp.com/attachments/456503841060421634/715072252928065616/Sakura_Empire.png"></td>
+								<td>sandy</td>
+								<td>3</td>
+								<td><img class='init_image' src='https://cdn.discordapp.com/attachments/714160573285138444/719616368579969024/Cubo_azur_lane.png' alt ='Image_Starto'/></td>
+							</tr>
+							
+							<tr>
+								<td>Dan</td>
+								<td><img class="faction" src="https://cdn.discordapp.com/attachments/456503841060421634/715072252928065616/Sakura_Empire.png"></td>
+								<td>sandy</td>
+								<td>3</td>
+								<td><img class='init_image' src='https://cdn.discordapp.com/attachments/714160573285138444/719616368579969024/Cubo_azur_lane.png' alt ='Image_Starto'/></td>
+							</tr>
+							
+							<tr>
+								<td>Dan</td>
+								<td><img class="faction" src="https://cdn.discordapp.com/attachments/456503841060421634/715072252928065616/Sakura_Empire.png"></td>
+								<td>sandy</td>
+								<td>3</td>
+								<td><img class='init_image' src='https://cdn.discordapp.com/attachments/714160573285138444/719616368579969024/Cubo_azur_lane.png' alt ='Image_Starto'/></td>
+							</tr>
+							
+							<tr>
+								<td>Dan</td>
+								<td><img class="faction" src="https://cdn.discordapp.com/attachments/456503841060421634/715072252928065616/Sakura_Empire.png"></td>
+								<td>sandy</td>
+								<td>3</td>
+								<td><img class='init_image' src='https://cdn.discordapp.com/attachments/714160573285138444/719616368579969024/Cubo_azur_lane.png' alt ='Image_Starto'/></td>
+							</tr>
+							
+							<tr>
+								<td>Dan</td>
+								<td><img class="faction" src="https://cdn.discordapp.com/attachments/456503841060421634/715072252928065616/Sakura_Empire.png"></td>
+								<td>sandy</td>
+								<td>3</td>
+								<td><img class='init_image' src='https://cdn.discordapp.com/attachments/714160573285138444/719616368579969024/Cubo_azur_lane.png' alt ='Image_Starto'/></td>
+							</tr>
+							
+							<tr>
+								<td>Dan</td>
+								<td><img class="faction" src="https://cdn.discordapp.com/attachments/456503841060421634/715072252928065616/Sakura_Empire.png"></td>
+								<td>sandy</td>
+								<td>3</td>
+								<td><img class='init_image' src='https://cdn.discordapp.com/attachments/714160573285138444/719616368579969024/Cubo_azur_lane.png' alt ='Image_Starto'/></td>
+							</tr>
+							
+						</tbody>
 					</table>
-					<tbody class="text-dark"></tbody>
                 </div>
             </div>
 		</div>
-
 		
 		<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>

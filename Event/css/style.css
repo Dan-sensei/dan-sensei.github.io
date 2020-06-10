@@ -4,25 +4,39 @@ body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-	background: radial-gradient(
-		circle,
-		#6c526b 0%,
-		#a07895 40%,
-		#564a72 80%
-	);
 	font-family: "Josefin Sans", sans-serif;
 }
 header {
 	width: 100%;
-	padding: 50px 0;
+	padding-top: 50px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
+@keyframes title-s{
+	0% {
+		transform: scale(1);
+		opacity: 0.3;
+	}
+	100% {
+		transform: scaleX(1.1);
+		opacity: 0;
+	}
+}
 .text {
-	font-size: 50px;
+	position: relative;
+	font-size: 80px;
 	color: white;
 	text-shadow: 0 0 10px white;
+	z-index: 3;
+}
+.text-bg{
+	top: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+	animation: title-s 0.5s ease-out 0s infinite;
+	z-index: 2;
 }
 
 @keyframes particle {
@@ -69,6 +83,18 @@ header {
 	font-size: 20px;
 	text-align: center;
 }
+.bg-darker {
+    background-color: #161616;
+}
+.bg-negative-grid {
+    background-image: linear-gradient(
+            rgba(255, 255, 255, 0.04) 1px,
+            transparent 1px
+        ),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 8px 8px;
+}
+
 
 .button {
 	padding: 15px;
@@ -90,19 +116,7 @@ header {
 	display: none;
 }
 
-#users {
-	display: flex;
-	justify-content: space-around;
-	padding: 0 7px;
-}
-#users > div {
-	background: rgba(255, 255, 255, 0.2);
-	height: 400px;
-	width: 300px;
-	text-align: center;
-	margin: 7px;
-	position: relative;
-}
+
 .foto {
 	border-radius: 50%;
 	height: 130px;
@@ -115,14 +129,102 @@ header {
 	font-size: 25px;
 	text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
 }
+#servers {
+	display: flex;
+	justify-content: space-around;
+	padding: 0 7px;
+}
+#servers > label {
+	display: block;
+	height: 70px;
+	text-align: center;
+	margin: 7px;
+	position: relative;
+}
+#servers > label input, #factions > label input {
+	display: none;
+}
 
 .o-70 {
-	opacity: 0.5;
-	transition: opacity 0.5s ease-in-out;
+	
+	transition: opacity 0.4s ease-in-out;
+	width: 20%;
+	cursor: pointer;
+	position: relative;
 }
-.o-70:hover {
+
+.o-70 .name {
+	position: relative;
+	z-index: 10;
+	opacity: 0.5;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.server-icon {
+	opacity: 0.5;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: opacity 0.2s ease-in-out;
+}
+.bg-server-tag {
+	position: absolute;
+	opacity: 0.5;
+	background: rgba(255, 255, 255, 0.2);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.o-70:hover .bg-server-tag, .o-70:hover .server-icon, .o-70:hover .name{
+	opacity: 0.7;
+}
+
+.o-70 input:checked ~ .bg-server-tag, .o-70 input:checked ~ .server-icon, .o-70 input:checked ~ .name {
 	opacity: 1;
 }
+
+#AMAGI {
+	background-image: url("../images/Amagi.png");
+	background-size: 325%;
+	background-position: 39% 20%;
+	background-repeat: no-repeat;
+	z-index: 5;
+}
+#AVRORA {
+	background-image: url("../images/Avrora.png");
+	background-size: 205%;
+	background-position: 86% 10%;
+	background-repeat: no-repeat;
+	z-index: 5;
+}
+#LEXINGTON {
+	background-image: url("../images/Lexington.png");
+	background-size: 243%;
+	background-position: 57% 10%;
+	background-repeat: no-repeat;
+	z-index: 5;
+}
+#SANDY {
+	background-image: url("../images/Sandy.png");
+	background-size: 114%;
+	background-position: 89% 23%;
+	background-repeat: no-repeat;
+	z-index: 5;
+}
+#WASHINGTON {
+	background-image: url("../images/Washington.png");
+	background-size: 240%;
+	background-position: 74% 18%;
+	background-repeat: no-repeat;
+	z-index: 5;
+}
+
 
 .host {
 	background: #44ffb4 !important;
@@ -151,26 +253,36 @@ table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, 
 
 tbody tr {
 	margin: 5px 0;
-	background-color: rgba(255, 255, 255, 0.3);
-	box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+	background-color: rgba(255, 255, 255, 0.01);
+	transition: background-color 0.2s ease-in-out;
 }
 
-tbody tr td:first-child {
-	padding-left: 5px;
+tr td, tr th {
+	padding-left: 10px;
+	padding-right: 10px;
 }
-
+th, td {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
 tbody tr td:last-child img {
 	cursor: pointer;
 }
 
+tbody tr:hover {
+	background-color: rgba(255, 255, 255, 0.1)
+}
 tbody tr td {
-	padding-top: 7px;
-	padding-bottom: 7px;
+	padding-top: 12px;
+	padding-bottom: 12px;
 }
 
-table.dataTable { 
+#nambawan {
+	margin: 0 7px;
+}
+
+table.dataTable, #nambawan { 
 	border-collapse: separate; 
-	border-spacing: 0 5px; 
+	border-spacing: 0 0;
 } 
 
 .faction {
@@ -188,4 +300,8 @@ table.dataTable {
 
 .server > div {
 	background-color: rgba(255, 255, 255, 0.4);
+}
+
+.container {
+	max-width: 1500px;
 }
