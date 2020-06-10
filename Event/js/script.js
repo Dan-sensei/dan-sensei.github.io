@@ -23,7 +23,7 @@ const localData = [["Dna","sandy","<img class='faction' src=https://cdn.discorda
 let table = null;
 let hallo = null;
 $( document ).ready(function() {
-	init();
+
 	hallo = document.getElementById("HALLO");
 	hallo.volume = 0.2;
 
@@ -50,20 +50,24 @@ function initDatatbleFromServer() {
 
 
 	firebase.database().ref().once('value').then(function(data) {
+		const d_val = data.val();
 		let Output = [];
-		let DATA = Object.entries(data.val());
-		DATA.forEach(function(e) {
-			e = e[1];
-			let content = [
-				e.username,
-				e.server, 
-				"<img class='faction' src="+FACTION2IMG[e.faccion]+" />",
-				"<span class='d-inline-block pl-3'>" + e.pts_start + "</span>",
-				"<img class='init_image' src='" + e.image_start + "' alt ='Image_Starto'/>"
-				
-			];
-			Output.push(content);
-		});
+		if(d_val != null) {
+
+			let DATA = Object.entries(data.val());
+			DATA.forEach(function(e) {
+				e = e[1];
+				let content = [
+					e.username,
+					e.server, 
+					"<img class='faction' src="+FACTION2IMG[e.faccion]+" />",
+					"<span class='d-inline-block pl-3'>" + e.pts_start + "</span>",
+					"<img class='init_image' src='" + e.image_start + "' alt ='Image_Starto'/>"
+					
+				];
+				Output.push(content);
+			});
+		}
 		
 		table = $('#nambawan').DataTable( {
 			"data": Output,
@@ -86,7 +90,7 @@ function initDatatbleFromServer() {
 				"sProcessing":     "Procesando...",
 				"sLengthMenu":     "Mostrar _MENU_ shikikans",
 				"sZeroRecords":    "No se encontraron resultados",
-				"sEmptyTable":     "Ningún dato disponible en esta tabla",
+				"sEmptyTable":     "Ningún shikikan a la vista",
 				"sInfo":           "Mostrando shikikans del _START_ al _END_ de un total de _TOTAL_ shikikans",
 				"sInfoEmpty":      "Mostrando shikikans del 0 al 0 de un total de 0 shikikans",
 				"sInfoFiltered":   "(filtrado de un total de _MAX_ shikikans)",
