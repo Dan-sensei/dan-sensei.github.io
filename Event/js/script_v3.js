@@ -20,6 +20,14 @@ const FACTION2IMG =
 
 const localData = [["Dna","sandy","<img class='faction' src=https://cdn.discordapp.com/attachments/456503841060421634/715072252928065616/Sakura_Empire.png />","<span class='d-inline-block pl-3'>123</span>","<img class='init_image' src='https://cdn.discordapp.com/attachments/709111440665214987/719122090027909221/maxresdefault.jpg' alt ='Image_Starto'/>"],["trotugap205","washington","<img class='faction' src=https://cdn.discordapp.com/attachments/456503841060421634/715072252928065616/Sakura_Empire.png />","<span class='d-inline-block pl-3'>225531</span>","<img class='init_image' src='https://cdn.discordapp.com/attachments/715233206772957256/719122516131577876/unknown.png' alt ='Image_Starto'/>"],["SpaceDgn","washington","<img class='faction' src=https://cdn.discordapp.com/attachments/456503841060421634/719105888979255366/DGNrados.png />","<span class='d-inline-block pl-3'>0</span>","<img class='init_image' src='https://cdn.discordapp.com/attachments/714160573285138444/719616368579969024/Cubo_azur_lane.png' alt ='Image_Starto'/>"],["pedro","avrora","<img class='faction' src=https://cdn.discordapp.com/attachments/456503841060421634/719105888979255366/DGNrados.png />","<span class='d-inline-block pl-3'>1</span>","<img class='init_image' src='https://cdn.discordapp.com/attachments/710215702119841882/719122743727095839/moyi_angry.jpg' alt ='Image_Starto'/>"]];
 
+let points = {
+	"hms": 0,
+	"uss": 0,
+	"dgn": 0,
+	"ijn": 0,
+	"kms": 0
+};
+
 let table = null;
 let hallo = null;
 $( document ).ready(function() {
@@ -65,9 +73,16 @@ function initDatatbleFromServer() {
 					"<img class='init_image' src='" + e.image_start + "' alt ='Image_Starto'/>"
 					
 				];
+				points[e.faccion]++;
 				Output.push(content);
 			});
 		}
+
+		$('#uss_n').html(' ' + points['uss']);
+		$('#ijn_n').html(' ' + points['ijn']);
+		$('#hms_n').html(' ' + points['hms']);
+		$('#kms_n').html(' ' + points['kms']);
+		$('#dgn_n').html(' ' + points['dgn']);
 		
 		table = $('#nambawan').DataTable( {
 			"data": Output,
