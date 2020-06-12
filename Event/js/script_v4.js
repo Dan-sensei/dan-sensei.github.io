@@ -35,6 +35,9 @@ $( document ).ready(function() {
 	hallo = document.getElementById("HALLO");
 	hallo.volume = 0.2;
 
+
+	const tilt = $('.js-tilt').tilt();
+
 	$('#servers input').change(function() {
 
 		if(this.id === 'sandy_c' && $("#sandy_c").prop("checked"))
@@ -98,7 +101,20 @@ function initDatatbleFromServer() {
 					navbar: 0,
 					toolbar: 0,
 				});
+
+				$('tbody tr').tilt({
+					scale: 1.008,
+					maxTilt: 1
+				});
+			
 			},
+			"columns": [
+				{ "width": "5%" },
+				{ "width": "10%" },
+				{ "width": "30%" },
+				{ "width": "20%" },
+				{ "width": "35%" },
+			  ],
 			"language":
 			{
 				"sProcessing":     "Procesando...",
