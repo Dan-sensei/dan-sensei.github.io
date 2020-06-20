@@ -68,13 +68,27 @@ function initDatatbleFromServer() {
 			let DATA = Object.entries(data.val());
 			DATA.forEach(function(e) {
 				e = e[1];
+
+				let pts_end = '-';
+				if(e.pts_end){
+					pts_end = e.pts_end;
+				}
+				
+
+				let img_end = '-';
+				if(e.image_end){
+					img_end = "<img class='init_image' src='" + e.image_end + "' alt ='Image_Endo'/>"
+				}
+
+
 				let content = [
 					e.username,
 					e.server, 
 					"<img class='faction' src="+FACTION2IMG[e.faccion]+" />",
 					"<span class='d-inline-block pl-3'>" + e.pts_start + "</span>",
-					"<img class='init_image' src='" + e.image_start + "' alt ='Image_Starto'/>"
-					
+					"<img class='init_image' src='" + e.image_start + "' alt ='Image_Starto'/>",
+					pts_end,
+					img_end
 				];
 				points[e.faccion]++;
 				Output.push(content);
@@ -93,6 +107,15 @@ function initDatatbleFromServer() {
 			"drawCallback": function( settings ) {
 				var $image = $('#image');
 
+				$('#nambawan td:nth-child(5)').viewer({
+					inline: false,
+					viewed: function() {
+						$image.viewer('zoomTo', 1);
+					},
+					navbar: 0,
+					toolbar: 0,
+				});
+
 				$('#nambawan td:last-child').viewer({
 					inline: false,
 					viewed: function() {
@@ -108,12 +131,15 @@ function initDatatbleFromServer() {
 				});
 			
 			},
+			autoWidth: false,
 			"columns": [
-				{ "width": "5%" },
-				{ "width": "10%" },
-				{ "width": "30%" },
 				{ "width": "20%" },
-				{ "width": "35%" },
+				{ "width": "10%" },
+				{ "width": "20%" },
+				{ "width": "10%" },
+				{ "width": "15%" },
+				{ "width": "10%" },
+				{ "width": "15%" },
 			  ],
 			"language":
 			{
