@@ -76,39 +76,43 @@ function initDatatbleFromServer() {
 			let DATA = Object.entries(data.val());
 			DATA.forEach(function(e) {
 				e = e[1];
-
-				if(e.id) {
 				
-				
-				let pts_end = '-';
-				if(e.pts_end){
-					pts_end = e.pts_end;
-				}
-				
+				if(e.id) {				
+					let pts_end = '-';
+					if(e.pts_end){
+						pts_end = e.pts_end;
+					}
+					
 
-				let img_end = '-';
-				if(e.image_end){
-					img_end = "<img class='init_image' src='" + e.image_end + "' alt ='Image_Endo'/>"
-				}
+					let img_end = '-';
+					if(e.image_end){
+						img_end = "<img class='init_image' src='" + e.image_end + "' alt ='Image_Endo'/>"
+					}
 
 
-				let content = [
-					e.username,
-					e.server, 
-					"<img class='faction' src="+FACTION2IMG[e.faccion]+" />",
-					"<span class='d-inline-block pl-3'>" + e.pts_start + "</span>",
-					"<img class='init_image' src='" + e.image_start + "' alt ='Image_Starto'/>",
-					pts_end,
-					img_end
-				];
-				if(e.pts_end) {
-					FINALPOINTS[e.faccion] += e.pts_end;
-				}
-				points[e.faccion]++;
-				Output.push(content);
+					let content = [
+						e.username,
+						e.server, 
+						"<img class='faction' src="+FACTION2IMG[e.faccion]+" />",
+						"<span class='d-inline-block pl-3'>" + e.pts_start + "</span>",
+						"<img class='init_image' src='" + e.image_start + "' alt ='Image_Starto'/>",
+						pts_end,
+						img_end
+					];
+					if(e.pts_end) {
+						FINALPOINTS[e.faccion] += e.pts_end;
+					}
+					points[e.faccion]++;
+					Output.push(content);
 				}
 			});
 		}
+
+		FINALPOINTS['uss'] = Math.round((FINALPOINTS['uss'] / 1000) * 10) / 10;
+		FINALPOINTS['ijn'] = Math.round((FINALPOINTS['ijn'] / 1000) * 10) / 10;
+		FINALPOINTS['hms'] = Math.round((FINALPOINTS['hms'] / 1000) * 10) / 10;
+		FINALPOINTS['kms'] = Math.round((FINALPOINTS['kms'] / 1000) * 10) / 10;
+		FINALPOINTS['dgn'] = Math.round((FINALPOINTS['dgn'] / 1000) * 10) / 10;
 
 		$('#uss_n').html(' ' + points['uss']);
 		$('#ijn_n').html(' ' + points['ijn']);
@@ -116,11 +120,17 @@ function initDatatbleFromServer() {
 		$('#kms_n').html(' ' + points['kms']);
 		$('#dgn_n').html(' ' + points['dgn']);
 
-		$('#E_USS').html(' ' + FINALPOINTS['uss']);
-		$('#E_IJN').html(' ' + FINALPOINTS['ijn']);
-		$('#E_HMS').html(' ' + FINALPOINTS['hms']);
-		$('#E_KMS').html(' ' + FINALPOINTS['kms']);
-		$('#E_DGN').html(' ' + FINALPOINTS['dgn']);
+
+		let k = FINALPOINTS['uss'] == 0 ? '' : 'k';
+		$('#E_USS').html(' ' + FINALPOINTS['uss'] + k);
+		k = FINALPOINTS['ijn'] == 0 ? '' : 'k';
+		$('#E_IJN').html(' ' + FINALPOINTS['ijn'] + k);
+		k = FINALPOINTS['hms'] == 0 ? '' : 'k';
+		$('#E_HMS').html(' ' + FINALPOINTS['hms'] + k);
+		k = FINALPOINTS['kms'] == 0 ? '' : 'k';
+		$('#E_KMS').html(' ' + FINALPOINTS['kms'] + k);
+		k = FINALPOINTS['dgn'] == 0 ? '' : 'k';
+		$('#E_DGN').html(' ' + FINALPOINTS['dgn'] + k);
 		
 		table = $('#nambawan').DataTable( {
 			"data": Output,
