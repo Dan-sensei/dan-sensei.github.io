@@ -77,6 +77,9 @@ function initDatatbleFromServer() {
 			DATA.forEach(function(e) {
 				e = e[1];
 
+				if(e.id) {
+				
+				
 				let pts_end = '-';
 				if(e.pts_end){
 					pts_end = e.pts_end;
@@ -103,6 +106,7 @@ function initDatatbleFromServer() {
 				}
 				points[e.faccion]++;
 				Output.push(content);
+				}
 			});
 		}
 
