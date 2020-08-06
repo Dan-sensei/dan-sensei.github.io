@@ -99,8 +99,12 @@ function initDatatbleFromServer() {
 						pts_end,
 						img_end
 					];
+					
 					if(e.pts_end) {
 						FINALPOINTS[e.faccion] += e.pts_end;
+					}
+					else if(e.pts_start) {
+						FINALPOINTS[e.faccion] += e.pts_start;
 					}
 					points[e.faccion]++;
 					Output.push(content);
