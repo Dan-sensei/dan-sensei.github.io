@@ -410,9 +410,13 @@ div.table-title {
    font-weight:normal;
    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
  }
-  
+ 
+ tr td{
+	transition: background-color 0.1s ease-in;
+ }
+
  tr:hover td {
-   background:#4E5066;
+   background-color: rgba(78, 80, 102, 0.2);
    color:#FFFFFF;
    border-top: 1px solid #22262e;
  }
@@ -427,12 +431,10 @@ div.table-title {
   
  tr:nth-child(odd) td {
    background-color:rgba(235,235,235, 0.2);
-   transition: background-color 0.1s ease-in;
  }
   
  tr:nth-child(odd):hover td {
    background-color:rgba(78, 80, 102, 0.2);
-   transition: background-color 0.1s ease-in;
  }
  
  tr:last-child td:first-child {
