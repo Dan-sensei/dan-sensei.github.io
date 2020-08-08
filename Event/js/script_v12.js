@@ -65,8 +65,8 @@ $( document ).ready(function() {
 });
 
 function initDatatbleFromServer() {
+	
 	firebase.initializeApp(firebaseConfig);
-
 
 	firebase.database().ref().once('value').then(function(data) {
 		const d_val = data.val();
@@ -86,16 +86,18 @@ function initDatatbleFromServer() {
 
 					let img_end = '-';
 					if(e.image_end){
-						img_end = "<img class='init_image' src='" + e.image_end + "' alt ='Image_Endo'/>"
+						let filename_e = e.image_end.substring(e.image_end.lastIndexOf('/')+1);
+						img_end = "<img class='init_image' src='" + e.image_end + "' alt='" + filename_e + "' />"
 					}
-
+					
+					let filename_s = e.image_start.substring(e.image_start.lastIndexOf('/')+1);
 
 					let content = [
 						e.username,
 						e.server, 
 						"<img class='faction' src="+FACTION2IMG[e.faccion]+" />",
 						"<span class='d-inline-block pl-3'>" + e.pts_start + "</span>",
-						"<img class='init_image' src='" + e.image_start + "' alt ='Image_Starto'/>",
+						"<img class='init_image' src='" + e.image_start + "' alt ='" + filename_s + "' />",
 						pts_end,
 						img_end
 					];

@@ -1,3 +1,7 @@
+html{
+	overflow-y: scroll;
+}
+
 html,
 body {
 	width: 100%;
@@ -364,9 +368,7 @@ div.table-title {
 	text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
 	text-transform:uppercase;
  }
- 
- 
- /*** Table Styles **/
+
  
  .table-fill {
    border-radius:3px;
@@ -418,9 +420,8 @@ div.table-title {
  tr:hover td {
    background-color: rgba(78, 80, 102, 0.2);
    color:#FFFFFF;
-   border-top: 1px solid #22262e;
  }
-  
+
  tr:first-child {
    border-top:none;
  }
