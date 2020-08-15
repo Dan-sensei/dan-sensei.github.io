@@ -30,8 +30,8 @@ body {
 .text {
 	position: relative;
 	font-size: 3.5rem;
-	color: white;
-	text-shadow: 0 0 10px white;
+	color: black;
+	text-shadow: 0 0 10px black;
 	z-index: 2;
 }
 
@@ -43,6 +43,7 @@ body {
 	font-size: 3.5rem;
 	animation: title-s 0.5s ease-out 0s infinite;
 	z-index: 3;
+	color: black;
 }
 
 @keyframes particle {
@@ -485,3 +486,10 @@ div.table-title {
    text-align: right;
  }
  
+ .countdown{
+	font-family: 'Roboto', sans-serif;
+	height: 80px;
+	color: white;
+	margin-bottom: 15px;
+	text-shadow: 0 0 10px white !important;
+ }
