@@ -41,7 +41,7 @@ let hallo = null;
 $( document ).ready(function() {
 
 	let start = moment().utc();
-	let end = moment.utc([2020,7,27,7,0,0]);
+	let end = moment.utc([2020,7,20,7,0,0]);
 
 	var diffTime = end - start;
 	var duration = moment.duration(diffTime, 'milliseconds');
@@ -50,7 +50,7 @@ $( document ).ready(function() {
 	setInterval(function(){
 		duration = moment.duration(duration - interval, 'milliseconds');
 
-		let h = ("0" + (duration.hours()+duration.days()*24)).slice(-3);
+		let h = ("0" + (duration.hours()+duration.days()*24)).slice(-2);
 		let m = ("0" + duration.minutes()).slice(-2);
 		let s = ("0" + duration.seconds()).slice(-2);
 
