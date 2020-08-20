@@ -489,7 +489,7 @@ div.table-title {
  .countdown{
 	font-family: 'Roboto', sans-serif;
 	height: 80px;
-	color: white;
+	color: #00ff3a;
 	margin-bottom: 15px;
-	text-shadow: 0 0 10px white !important;
+	text-shadow: 0 0 10px #00ff3a !important;
  }

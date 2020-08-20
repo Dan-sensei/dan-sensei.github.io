@@ -40,23 +40,6 @@ let table = null;
 let hallo = null;
 $( document ).ready(function() {
 
-	let start = moment().utc();
-	let end = moment.utc([2020,7,20,7,0,0]);
-
-	var diffTime = end - start;
-	var duration = moment.duration(diffTime, 'milliseconds');
-	var interval = 1000;
-
-	setInterval(function(){
-		duration = moment.duration(duration - interval, 'milliseconds');
-
-		let h = ("0" + (duration.hours()+duration.days()*24)).slice(-2);
-		let m = ("0" + duration.minutes()).slice(-2);
-		let s = ("0" + duration.seconds()).slice(-2);
-
-		$('.countdown').text( h + ":" + m + ":" + s)
-	}, interval);
-
 	hallo = document.getElementById("HALLO");
 	hallo.volume = 0.2;
 
