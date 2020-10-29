@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/datatables.min.css" />
 		<link rel="stylesheet" href="css/viewer.css">
-		<link rel="stylesheet" href="css/style_v1.css">
+		<link rel="stylesheet" href="css/style_v2.css">
     </head>
     <body class="bg-event bg-darker pr-0">
 		<div id="s" class="position-fixed w-100 h-100" style="z-index: -1;">
@@ -36,7 +36,7 @@
 		</audio>
 		<div class="points text-light">
 			<div class="container-fluid h-100">
-				<div class="row h-100 parallax overflow-hidden" id="scene">
+				<div class="row h-100 parallax overflow-hidden position-relative" id="scene">
 					
 					<div class="col-6 d-flex align-items-center justify-content-center text-center position-relative parallax pb-5 pb-md-0" data-depth="0.05">
 						<div>
@@ -49,10 +49,24 @@
 							x<span><span id="uss_n"> -</span><img class="pl-2" src="images/shikikan.png" alt="shikikans">
 						</div>
 						
-					</div>
+          </div>
+          <div class="parallax w-100 h-100 d-none d-xl-block" data-depth="0.1">
+            <img src="images/Illustrious_µ.png" alt="Illustrious_µ" class="illustrious">
+          </div>
+          <div class="parallax w-100 h-100 d-none d-xl-block" data-depth="0.15">
+
+            <img src="images/Roon_µ.png" alt="Roon_µ" class="roon">
+          </div>
+          <div class="parallax w-100 h-100 d-none d-xl-block" data-depth="0.1">
+
+            <img src="images/Baltimore_µ.png" alt="Baltimore_µ" class="baltimore">
+          </div>
+          <div class="parallax w-100 h-100 d-none d-xl-block" data-depth="0.15">
+
+            <img src="images/Taihou_µ.png" alt="Taihou_µ" class="taihou">
+          </div>
 					<div class="col-6 d-flex align-items-center justify-content-center text-center position-relative parallax pb-5 pb-md-0" data-depth="0.05">
 						<div>
-
 							<div class="pts_c mb-2">
 								<div id="hms_img">
 									<img src="images/RoyalNavy.png" alt="EagleUnion">
@@ -94,7 +108,7 @@
 		<div class="countdown text text-center d-none">
 			&#60;DGN&#62;
 		</div>
-		<div class="w-100 px-5 mt-5">
+		<div class="w-100 px-5 mb-5">
 			<div class="pts_c w-100"></div>
 		</div>
 		<div class="row mx-0">
@@ -113,7 +127,6 @@
                         <thead>
                             <tr>
                                 <th>Username</th>
-                                <th>Server</th>
                                 <th>Faccion</th>
                                 <th>Puntos inicio</th>
                                 <th>Imagen inicio</th>
@@ -142,7 +155,7 @@
 		<script src="js/tilt.jquery.js"></script>
 		<script src="js/moment.js"></script>
 		<script src="js/particles.min.js"></script>
-		<script src="js/script_v1.js"></script>
+		<script src="js/script_v2.js"></script>
 
 		<script type="text/javascript">
 			$(function(){

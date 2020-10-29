@@ -106,7 +106,6 @@ function initDatatbleFromServer() {
 
 					let content = [
 						e.username,
-						e.server, 
 						"<img class='faction' src="+FACTION2IMG[e.faccion]+" />",
 						"<span class='d-inline-block pl-3'>" + e.pts_start + "</span>",
 						"<img class='init_image' src='" + e.image_start + "' alt ='" + filename_s + "' />",

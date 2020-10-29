@@ -394,6 +394,37 @@ table.dataTable, #nambawan {
 	max-width: 100%;
 }
 
+.illustrious{
+	max-width: 40%;
+	position: absolute;
+	top:-15%;
+	right: -19%;
+	opacity: 0.9;
+}
+
+.roon{
+	max-width: 32%;
+	position: absolute;
+	bottom:-50%;
+	right: -7%;
+	opacity: 0.9;
+}
+
+.taihou{
+	max-width: 70%;
+	position: absolute;
+	bottom:-80%;
+	left: -27%;
+	opacity: 0.9;
+}
+
+.baltimore{
+	max-width: 25%;
+	position: absolute;
+	top:-5%;
+	left: -5%;
+	opacity: 0.9;
+}
 
 #u > div{
 	width: 350px;
