@@ -23,7 +23,6 @@ const localData = [["Dna","sandy","<img class='faction' src=https://cdn.discorda
 let points = {
 	"hms": 0,
 	"uss": 0,
-	"dgn": 0,
 	"ijn": 0,
 	"kms": 0
 };
@@ -31,7 +30,6 @@ let points = {
 let FINALPOINTS = {
 	"hms": 0,
 	"uss": 0,
-	"dgn": 0,
 	"ijn": 0,
 	"kms": 0
 }
@@ -151,7 +149,7 @@ function initDatatbleFromServer() {
 			"drawCallback": function( settings ) {
 				var $image = $('#image');
 
-				$('#nambawan td:nth-child(5)').viewer({
+				$('#nambawan td:nth-child(4)').viewer({
 					inline: false,
 					viewed: function() {
 						$image.viewer('zoomTo', 1);

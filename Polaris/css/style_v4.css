@@ -301,7 +301,7 @@ tr td, tr th {
 th, td {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
-tbody tr td:last-child img, tbody tr td:nth-child(5) img {
+tbody tr td:last-child img, tbody tr td:nth-child(4) img {
 	cursor: pointer;
 }
 
