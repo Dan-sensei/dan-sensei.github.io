@@ -119,7 +119,6 @@ function initDatatbleFromServer() {
 					else if(e.pts_start) {
 						FINALPOINTS[e.faccion] += e.pts_start;
 					}
-					
 					points[e.faccion]++;
 					Output.push(content);
 				}
@@ -130,13 +129,11 @@ function initDatatbleFromServer() {
 		FINALPOINTS['ijn'] = Math.round((FINALPOINTS['ijn'] / 1000) * 10) / 10;
 		FINALPOINTS['hms'] = Math.round((FINALPOINTS['hms'] / 1000) * 10) / 10;
 		FINALPOINTS['kms'] = Math.round((FINALPOINTS['kms'] / 1000) * 10) / 10;
-		FINALPOINTS['dgn'] = Math.round((FINALPOINTS['dgn'] / 1000) * 10) / 10;
 
 		$('#uss_n').html(' ' + points['uss']);
 		$('#ijn_n').html(' ' + points['ijn']);
 		$('#hms_n').html(' ' + points['hms']);
 		$('#kms_n').html(' ' + points['kms']);
-		$('#dgn_n').html(' ' + points['dgn']);
 
 
 		let k = FINALPOINTS['uss'] == 0 ? '' : 'k';
@@ -147,8 +144,6 @@ function initDatatbleFromServer() {
 		$('#E_HMS').html(' ' + FINALPOINTS['hms'] + k);
 		k = FINALPOINTS['kms'] == 0 ? '' : 'k';
 		$('#E_KMS').html(' ' + FINALPOINTS['kms'] + k);
-		k = FINALPOINTS['dgn'] == 0 ? '' : 'k';
-		$('#E_DGN').html(' ' + FINALPOINTS['dgn'] + k);
 		
 		table = $('#nambawan').DataTable( {
 			"data": Output,
@@ -188,7 +183,6 @@ function initDatatbleFromServer() {
 				{ "width": "10%" },
 				{ "width": "15%" },
 				{ "width": "10%" },
-				{ "width": "15%" },
 			  ],
 			"language":
 			{
