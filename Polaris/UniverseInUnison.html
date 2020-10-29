@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="Cache-Control"
+            content="no-cache, no-store, must-revalidate"
+        />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <title>Aurora Noctis</title>
+        <link
+            href="https://fonts.googleapis.com/css?family=Josefin+Sans"
+            rel="stylesheet"
+		/>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+		<link rel="icon" 
+			type="image/ico" 
+			href="favicon.ico">
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/datatables.min.css" />
+		<link rel="stylesheet" href="css/viewer.css">
+		<link rel="stylesheet" href="css/style_v1.css">
+    </head>
+    <body class="bg-event bg-darker pr-0">
+		<div id="u" class="position-absolute w-100 h-100 display-1 d-flex align-items-center text-center justify-content-center parallax" data-depth="0.01">
+			<div id="presp" class="d-none"></div>
+			<div id="sp"></div>
+		</div>
+		<audio id="Unison">
+			<source src="sounds/Muse_Universe_in_Unison_Anime.mp3" type="audio/mp3">
+		</audio>
+		<div class="points text-light">
+			<div class="container-fluid h-100">
+				<div class="row h-100 parallax overflow-hidden" id="scene">
+					
+					<div class="col-6 d-flex align-items-center justify-content-center text-center position-relative parallax pb-5 pb-md-0" data-depth="0.05">
+						<div>
+							<div class="pts_c mb-2">
+								<div id="uss_img">
+									<img src="images/EagleUnion.png" alt="EagleUnion">
+								</div>
+								<div id="E_USS" class="display-4 pts">-</div>
+							</div>
+							x<span><span id="uss_n"> -</span><img class="pl-2" src="images/shikikan.png" alt="shikikans">
+						</div>
+						
+					</div>
+					<div class="col-6 d-flex align-items-center justify-content-center text-center position-relative parallax pb-5 pb-md-0" data-depth="0.05">
+						<div>
+
+							<div class="pts_c mb-2">
+								<div id="hms_img">
+									<img src="images/RoyalNavy.png" alt="EagleUnion">
+								</div>
+								<div id="E_HMS" class="display-4 pts">-</div>
+							</div>
+							x<span><span id="hms_n"> -</span><img class="pl-2" src="images/shikikan.png" alt="shikikans">
+						</div>
+					</div>
+					<div class="col-6 d-flex align-items-center justify-content-center text-center position-relative parallax pb-5 pb-md-0" data-depth="0.05">
+						<div>
+
+							<div class="pts_c mb-2">
+								<div id="ijn_img">
+									
+									<img src="images/SakuraEmpire.png" alt="EagleUnion">
+								</div>
+								<div id="E_IJN" class="display-4 pts">-</div>
+							</div>
+							x<span><span id="uss_n"> -</span><img class="pl-2" src="images/shikikan.png" alt="shikikans">
+						</div>
+					</div>
+					<div class="col-6 d-flex align-items-center justify-content-center text-center position-relative parallax pb-5 pb-md-0" data-depth="0.05">
+						<div>
+
+							<div class="pts_c mb-2">
+								<div id="kms_img">
+									
+									<img id="kms_img" src="images/IronBlood.png" alt="EagleUnion">
+								</div>
+								<div id="E_KMS" class="display-4 pts">-</div>
+							</div>
+							x<span><span id="uss_n"> -</span><img class="pl-2" src="images/shikikan.png" alt="shikikans">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="countdown text text-center d-none">
+			&#60;DGN&#62;
+		</div>
+		<div class="w-100 px-5 mt-5">
+			<div class="pts_c w-100"></div>
+		</div>
+		<div class="row mx-0">
+
+
+		<div class="col-12">
+
+
+        <div class="container text-light px-0">
+				
+				<div id="servers" class="w-100 mt-3 mb-5 pl-0" >
+			</div>
+            <div class="row mr-0">
+                <div class="col-12 text-light">
+                    <table id="nambawan" class="display text-darker w-100">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Server</th>
+                                <th>Faccion</th>
+                                <th>Puntos inicio</th>
+                                <th>Imagen inicio</th>
+                                <th>Puntos finales</th>
+                                <th>Imagen final</th>
+                            </tr>
+                        </thead>
+						<tbody class="text-light">	
+						</tbody>
+					</table>
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
+		<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<script src="js/parallax.min.js"></script>
+        <script src="js/datatables.min.js"></script>
+        <script src="js/viewer.min.js"></script>
+        <script src="js/jquery-viewer.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/tilt.jquery.js"></script>
+		<script src="js/moment.js"></script>
+		<script src="js/script_v1.js"></script>
+
+		<script type="text/javascript">
+			$(function(){
+				var scene = document.getElementById('scene');
+				var parallaxInstance = new Parallax(scene, {
+					relativeInput: true
+				});
+			});
+		</script>
+    </body>
+</html>
