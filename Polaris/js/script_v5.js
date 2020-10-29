@@ -41,7 +41,7 @@ let play = true;
 $( document ).ready(function() {
 
 	Unison = document.getElementById("Unison");
-	Unison.volume = 0.2;
+	Unison.volume = 0.5;
 
 	$('#sp').click(function(){
 		play = !play;
